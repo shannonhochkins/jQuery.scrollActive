@@ -3,7 +3,7 @@ Scroll Active
 This plugin will automate animation, activate sections in the menu & the content & correctly assign hashes to the browsers window. created by [shannon hochkins].
 [shannon hochkins]: http://www.shannonhochkins.com/
 
-Usage
+Usage & Options
 --------------
 
 ```javascript
