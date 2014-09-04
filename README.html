@@ -2,15 +2,15 @@
 <p>This plugin will automate animation, activate sections in the menu &amp; the content &amp; correctly assign hashes to the browsers window. created by <a href="http://www.shannonhochkins.com/">shannon hochkins</a>.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class="lang-javascript">$(&#39;.element&#39;).scrollActive({
-    scanItems: &#39;.post&#39;, // CLASS of elements you want to scan to see if it&#39;s in the set area
-    scanLimit: 200, // The distance from the top that the plugin scans from
-    startScanningAfter: 50, // used so that the first item in the list can be activated on page load
-    itemTopOffset: 0, // You can add or even subtract, where the plugin thinks the top of each item is.
+    scanItems: &#39;.post&#39;,
+    scanLimit: 200,
+    startScanningAfter: 50,
+    itemTopOffset: 0,
     activeClass: &#39;active&#39;,
     pageAnimationSpeed: 300,
-    updateHash: true, // If the browser should set the hash when scrolling or clicking he sidebar
-    hashPrefix: &#39;menu_&#39;, // Used so that the browser doesn&#39;t automatically jump to the id on the page and cause our animation to lag
-    debug: true, // enables a visual representation of when items become active
+    updateHash: true,
+    hashPrefix: &#39;menu_&#39;,
+    debug: true,
     onScroll: function(settings) {},
 });</code></pre>
 <h2 id="options">Options</h2>
@@ -41,7 +41,7 @@
 <tr>
 <td>itemTopOffset</td>
 <td style="text-align:center">0</td>
-<td style="text-align:right">You have an option to push the scan field down by an offset as well</td>
+<td style="text-align:right">You have an option to push the scan field down by an offset as well (positive or negative)</td>
 </tr>
 <tr>
 <td>activeClass</td>
