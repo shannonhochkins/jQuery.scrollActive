@@ -46,8 +46,8 @@ Options
 Debug mode.
 --------------
 
--- The red section toward the top that is drawn indicates that any items who's top position falls inside the redZone, it's nolonger classed as active.
--- The green section indicates that scan area, so the first item it finds who's top position is closest to the top of the green zone but NOT in the redZone, is classed as the active item.
--- If the greenZone is PINK it means that the startScanningAfter variable is currently set to a larger pixel value than the user has scrolled, once the scroll count is larger than the startScanningAfter variable, it will start scanning.
+- The red section toward the top that is drawn indicates that any items who's top position falls inside the redZone, it's nolonger classed as active.
+- The green section indicates that scan area, so the first item it finds who's top position is closest to the top of the green zone but NOT in the redZone, is classed as the active item.
+- If the greenZone is PINK it means that the startScanningAfter variable is currently set to a larger pixel value than the user has scrolled, once the scroll count is larger than the startScanningAfter variable, it will start scanning.
 
 
