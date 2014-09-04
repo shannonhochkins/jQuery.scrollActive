@@ -1,0 +1,416 @@
+/* Body - fonts
+----------------------------------------------- */
+/* Global
+----------------------------------------------- */
+/* Font Specific Settings
+----------------------------------------------- */
+/* Form Settings 
+----------------------------------------------- */
+/* Tables
+----------------------------------------------- */
+/* Button settings
+----------------------------------------------- */
+/* Site colour variables
+----------------------------------------------- */
+/* Settings for SassyGrids 
+----------------------------------------------------------------------------------------------------*/
+/* Import Mixins used by SassyGrids
+----------------------------------------------------------- -----------------------------------------*/
+/* Import Functions used by SassyGrids
+----------------------------------------------------------- -----------------------------------------*/
+/* Error Handling for SASS precomiler
+----------------------------------------------------------- -----------------------------------------*/
+/* Float Classes */
+/* line 4, utils.scss */
+.floatRight {
+  float: right;
+  vertical-align: top;
+}
+
+/* line 5, utils.scss */
+.floatLeft {
+  float: left;
+  vertical-align: top;
+}
+
+/* line 6, utils.scss */
+.clearLeft {
+  clear: left;
+}
+
+/* line 7, utils.scss */
+.clearRight {
+  clear: right;
+}
+
+/* line 8, utils.scss */
+.clearBoth {
+  clear: both;
+}
+
+/* line 9, utils.scss */
+.clearfix {
+  *zoom: 1;
+}
+/* line 16, ../shared/helpers/_clearfix.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 20, ../shared/helpers/_clearfix.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* Hides from IE-mac \*/
+/* line 11, utils.scss */
+* html .clearFix {
+  height: 1%;
+}
+
+/* End hide from IE-mac */
+/* line 13, utils.scss */
+.inlineBlock {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+/* line 15, utils.scss */
+.disableScroll {
+  overflow-y: hidden;
+}
+
+/*Text Classes*/
+/* line 18, utils.scss */
+.textAlignLeft {
+  text-align: left;
+}
+
+/* line 19, utils.scss */
+.textAlignRight {
+  text-align: right;
+}
+
+/* line 20, utils.scss */
+.textAlignCenter {
+  text-align: center;
+}
+
+/* line 21, utils.scss */
+.textAlignJustify {
+  text-align: justify;
+}
+
+/* line 22, utils.scss */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* line 23, utils.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 24, utils.scss */
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* line 25, utils.scss */
+.defaultText {
+  text-transform: none;
+}
+
+/* line 26, utils.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 27, utils.scss */
+.light {
+  font-weight: lighter;
+}
+
+/* line 28, utils.scss */
+.normal {
+  font-weight: normal;
+}
+
+/* line 29, utils.scss */
+.black {
+  color: black;
+}
+
+/* line 30, utils.scss */
+.white {
+  color: white;
+}
+
+/* line 32, utils.scss */
+.fontSize14 {
+  font-size: 18px;
+}
+
+/* line 33, utils.scss */
+.fontSize18 {
+  font-size: 18px;
+}
+
+/* line 34, utils.scss */
+.fontSize30 {
+  font-size: 30px;
+}
+
+/* line 35, utils.scss */
+.fontSize36 {
+  font-size: 36px;
+}
+
+/* line 37, utils.scss */
+.brandColour1 {
+  background: #f57e20;
+}
+
+/* line 38, utils.scss */
+.brandColour2 {
+  background: #231f1f;
+}
+
+/* line 39, utils.scss */
+.brandColour3 {
+  background: #1e1e1e;
+}
+
+/* line 40, utils.scss */
+.brandColour4 {
+  background: #f0f0f0;
+}
+
+/* line 42, utils.scss */
+.relative {
+  position: relative;
+}
+
+/* line 45, utils.scss */
+.sectionGapBottom {
+  padding-bottom: 80px;
+}
+
+/* line 46, utils.scss */
+.sectionGapTop {
+  padding-top: 80px;
+}
+
+/* line 47, utils.scss */
+.sectionGapBottomHalf {
+  padding-bottom: 40px;
+}
+
+/* line 48, utils.scss */
+.sectionGapTopHalf {
+  padding-top: 40px;
+}
+
+/* line 50, utils.scss */
+.disableChildren > * {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* line 54, utils.scss */
+.noMargin {
+  margin: 0;
+}
+
+/* line 55, utils.scss */
+.horizontalMargin {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/* line 56, utils.scss */
+.verticalMargin {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* line 57, utils.scss */
+.bothMargins {
+  margin: 25px 25px;
+}
+
+/* line 58, utils.scss */
+.marginTop {
+  margin-top: 25px;
+}
+
+/* line 59, utils.scss */
+.marginRight {
+  margin-right: 25px;
+}
+
+/* line 60, utils.scss */
+.marginBottom {
+  margin-bottom: 25px;
+}
+
+/* line 61, utils.scss */
+.marginLeft {
+  margin-left: 25px;
+}
+
+/* line 62, utils.scss */
+.marginTopDouble {
+  margin-top: 50px;
+}
+
+/* line 63, utils.scss */
+.marginRightDouble {
+  margin-right: 50px;
+}
+
+/* line 64, utils.scss */
+.marginBottomDouble {
+  margin-bottom: 50px;
+}
+
+/* line 65, utils.scss */
+.marginLeftDouble {
+  margin-left: 50px;
+}
+
+/* line 66, utils.scss */
+.noMarginTop {
+  margin-top: 0px;
+}
+
+/* line 67, utils.scss */
+.noMarginRight {
+  margin-right: 0px;
+}
+
+/* line 68, utils.scss */
+.noMarginBottom {
+  margin-bottom: 0px;
+}
+
+/* line 69, utils.scss */
+.noMarginLeft {
+  margin-left: 0px;
+}
+
+/* line 72, utils.scss */
+.noPadding {
+  padding: 0;
+}
+
+/* line 74, utils.scss */
+.hideText {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+}
+
+/* line 2, ../shared/css3/_slanted-highlight.scss */
+.slanted span {
+  background: red;
+}
+/* line 5, ../shared/css3/_slanted-highlight.scss */
+.slanted span:before {
+  border-bottom: 15px solid red;
+  border-left: 4px solid transparent;
+  content: "";
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  height: 0;
+  left: -4px;
+  top: 3px;
+  width: 0;
+  position: relative;
+}
+/* line 16, ../shared/css3/_slanted-highlight.scss */
+.slanted span:after {
+  border-top: 15px solid red;
+  border-right: 4px solid transparent;
+  content: "";
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  height: 0;
+  left: 4px;
+  top: 3px;
+  width: 0;
+  position: relative;
+}
+
+/* line 78, utils.scss */
+.fillWidth {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+/* line 79, utils.scss */
+.fillHeight {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+}
+
+/* Chrome Frame prompt  */
+/* line 82, utils.scss */
+.chromeFrame {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Image replacement */
+/* line 84, utils.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+/* line 85, utils.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+/* line 87, utils.scss */
+.hidden, #simplemodal-data .hiddenModal {
+  display: none;
+}
+
+/*Hide only visually, but have it available for screenreaders: h5bp.com/v*/
+/* line 89, utils.scss */
+.visuallyHidden {
+  visibility: hidden !important;
+  display: block !important;
+}
+
+/* Hide visually and from screenreaders, but maintain layout*/
+/* line 91, utils.scss */
+.invisible {
+  visibility: hidden;
+}

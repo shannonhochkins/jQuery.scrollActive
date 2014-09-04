@@ -1,0 +1,54 @@
+// http://www.w3.org/TR/css3-animations/#the-animation-name-property-
+// Each of these mixins support comma separated lists of values, which allows different transitions for individual properties to be described in a single style rule. Each value in the list corresponds to the value at that same position in the other properties.
+
+$prefixVals: "webkit" "moz" "o" "ms" "spec";
+
+// Official animation shorthand property.
+@mixin animation ($animations...) {
+  @include prefix(animation, $animations, $prefixVals);
+}
+
+// Individual Animation Properties
+@mixin animation-name ($names...) {
+  @include prefix(animation-name, $names, $prefixVals);
+}
+
+
+@mixin animation-duration ($times...) {
+  @include prefix(animation-duration, $times, $prefixVals);
+}
+
+
+@mixin animation-timing-function ($motions...) {
+// ease | linear | ease-in | ease-out | ease-in-out
+  @include prefix(animation-timing-function, $motions, $prefixVals);
+}
+
+
+@mixin animation-iteration-count ($values...) {
+// infinite | <number>
+  @include prefix(animation-iteration-count, $values, $prefixVals);
+}
+
+
+@mixin animation-direction ($directions...) {
+// normal | alternate
+  @include prefix(animation-direction, $directions, $prefixVals);
+}
+
+
+@mixin animation-play-state ($states...) {
+// running | paused
+  @include prefix(animation-play-state, $states, $prefixVals);
+}
+
+
+@mixin animation-delay ($times...) {
+  @include prefix(animation-delay, $times, $prefixVals);
+}
+
+
+@mixin animation-fill-mode ($modes...) {
+// none | forwards | backwards | both
+  @include prefix(animation-fill-mode, $modes, $prefixVals);
+}

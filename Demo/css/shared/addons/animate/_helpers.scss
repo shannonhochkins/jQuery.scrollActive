@@ -1,0 +1,120 @@
+
+$default-animated-class-name: "animated" !default;
+
+// Default Animation Properties
+$default-animation-properties: 1s ease-in-out !default;
+
+// keyframes output: true | false
+$default-keyframes-output: true !default;
+
+
+// Animation class mode:  true | false | nested | null
+// true   : Will give each animation name, it's own .animated class which will control the animation for it.
+// false  : All animation properties are included under the animation style name, this means animation will start on page load or as soon as the class is added.
+// nested : This will use the class name that the include is within, meaning you can use any animation, under a custom class name. You will have to output the keyframes manually however
+// null   : This will not output the animation properties inside the class, this allows you to add a separate class to control the animation.
+
+
+// Do not change the defaults, these variables should be overwritten by the includes when called.
+$default-animated-class-mode: false !default;
+// Do not change this variable, this variable is used to override at certain times.
+$default-animation-class-mode: true !default;
+
+
+
+// ---------------------------------------------------------------------------
+// animated class for external use
+@mixin animated-class(
+  $properties : $default-animation-properties, 
+  $class      : $default-animation-class-mode,
+  $attach     : false
+) {
+  // We've called the animated class function by it self, so reset the class property;
+  @if $attach == false {
+    $class: false;
+  }
+  // if we're true, base level, else, nested.
+  $selector: if($class == false, "." + $default-animated-class-name, "&." + $default-animated-class-name);
+
+  @if $class != nested {
+    // We are not nested
+    @if $class == true {
+      // The selector will be prepended with &
+      #{$selector} { 
+        @include animation-properties($properties);
+      }  
+    }
+    
+    @if $class == false {
+      // The selector will not be prepended
+      @if $attach == false {
+        // We have called the animated-class mixin by it self, and it's not called from an animation style.
+        #{$selector} { 
+          @include animation-properties($properties);
+        }
+      } @else {
+        // An animation style has called the mixin, do not wrap it.
+        @include animation-properties($properties);
+      }
+    }
+    @if $class == silent {
+      @include animation-properties($properties);
+    }
+
+  } @else {
+    @include animation-properties($properties);
+  }
+}
+
+@mixin animation-properties($properties) {
+  @if $properties == default {
+    // Reset properties to default if null
+    $properties : $default-animation-properties;
+  }
+  @if length($properties) > 0 {
+    @if nth($properties,1) != null { @include animation-duration(nth($properties,1)); }
+  }
+  @if length($properties) > 1 {
+    @if nth($properties,2) != null { @include animation-timing-function(nth($properties,2)); }
+  }  
+}
+
+// ---------------------------------------------------------------------------
+// animation-class
+
+@mixin animation-class(
+  $name, 
+  $properties : $default-animation-properties,
+  $class      : $default-animated-class-mode
+) {   
+  
+  $selector: if($class == silent, "%" + $name, "." + $name);
+
+  @if $class != nested {
+
+    #{$selector} {
+      @include animation-name($name);
+      
+      @include animated-class($properties, $class, true);     
+      @content;
+    }
+  }
+
+  @if $class == nested {    
+    @include animation-name($name);
+    @include animated-class($properties, nested, true);    
+  }
+}
+
+// ---------------------------------------------------------------------------
+// yepnope
+
+// Take a $list, return true if any $args are present.
+@function yepnope($list, $args) {
+  $list     : compact($list);
+  $return   : false;
+  @each $arg in $args {
+    $return: if(index($list,$arg), true, $return);
+  }
+  @return $return;
+}

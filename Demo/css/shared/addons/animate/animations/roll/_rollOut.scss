@@ -1,0 +1,25 @@
+
+
+// ---------------------------------------------------------------------------
+// rollOut
+
+@mixin animate-rollOut(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: rollOut;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include opacity(1);
+        @include transform(translateX(0px) rotate(0deg)); }
+      100% {
+        @include opacity(0);
+        @include transform(translateX(-100%) rotate(-120deg));
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}

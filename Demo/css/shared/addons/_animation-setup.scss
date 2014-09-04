@@ -1,0 +1,18 @@
+// ---------------------------------------------------------------------------
+// Setup SassyAnimations
+// ---------------------------------------------------------------------------
+
+@import "animate/animate";
+
+// This will specify your animation class name
+
+$default-animated-class-name: "animated";
+
+// Default Animation Properties
+$default-animation-properties: 1s ease-in-out;
+
+// keyframes output: true | false
+$default-keyframes-output: true;
+
+
+

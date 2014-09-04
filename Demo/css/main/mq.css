@@ -1,0 +1,90 @@
+/* Body - fonts
+----------------------------------------------- */
+/* Global
+----------------------------------------------- */
+/* Font Specific Settings
+----------------------------------------------- */
+/* Form Settings 
+----------------------------------------------- */
+/* Tables
+----------------------------------------------- */
+/* Button settings
+----------------------------------------------- */
+/* Site colour variables
+----------------------------------------------- */
+/* Settings for SassyGrids 
+----------------------------------------------------------------------------------------------------*/
+/* Import Mixins used by SassyGrids
+----------------------------------------------------------- -----------------------------------------*/
+/* Import Functions used by SassyGrids
+----------------------------------------------------------- -----------------------------------------*/
+/* Error Handling for SASS precomiler
+----------------------------------------------------------- -----------------------------------------*/
+/* line 6, mq.scss */
+body.fluid .gridContainer#notify {
+  margin-left: 0;
+  left: 0;
+}
+@media screen and (min-width: 0px) and (max-width: 564px) {
+  /* line 10, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 {
+    width: 100%;
+  }
+  /* line 11, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 input[type="text"] {
+    width: 55%;
+    margin-left: 2.5%;
+  }
+  /* line 12, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 input[type="submit"] {
+    width: 38.75%;
+    float: right;
+    margin-right: 2.5%;
+  }
+}
+@media screen and (min-width: 565px) and (max-width: 846px) {
+  /* line 16, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 {
+    width: 70%;
+    margin: 0 auto;
+    float: none;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+  }
+  /* line 17, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 input[type="text"] {
+    width: 67.5%;
+  }
+  /* line 18, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 input[type="submit"] {
+    width: 30%;
+    float: right;
+  }
+}
+@media screen and (min-width: 847px) and (max-width: 1128px) {
+  /* line 22, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 {
+    width: 50%;
+    margin: 0 auto;
+    float: none;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+  }
+  /* line 23, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 input[type="text"] {
+    width: 67.5%;
+  }
+  /* line 24, mq.scss */
+  body.fluid .gridContainer .formWrapper form.grid10 input[type="submit"] {
+    width: 30%;
+    float: right;
+  }
+}

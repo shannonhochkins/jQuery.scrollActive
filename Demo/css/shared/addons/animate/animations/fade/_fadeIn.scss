@@ -1,0 +1,226 @@
+
+
+// ---------------------------------------------------------------------------
+// fadeIn
+
+@mixin animate-fadeIn(  
+  $properties   : null,
+  $class        : $default-animation-class-mode,
+  $keyframes    : $default-keyframes-output
+) {
+  $name: fadeIn;
+  
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }  
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInUp
+
+@mixin animate-fadeInUp(
+  $properties   : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInUp;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        @include translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInDown
+
+@mixin animate-fadeInDown(
+  $properties   : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInDown;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include translateY(-20px);
+        opacity: 0;
+      }
+      100% {
+        @include translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInRight
+
+@mixin animate-fadeInRight(
+  $properties   : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInRight;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include translateX(20px);
+        opacity: 0;
+      }
+      100% {
+        @include translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInLeft
+
+@mixin animate-fadeInLeft(
+  $properties   : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInLeft;
+
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include translateX(-20px);
+        opacity: 0;
+      }
+      100% {
+        @include translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInUpBig
+
+@mixin animate-fadeInUpBig(
+  $properties   : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInUpBig;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include translateY(2000px);
+        opacity: 0;
+      }
+      100% {
+        @include translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInDownBig
+
+@mixin animate-fadeInDownBig(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInDownBig;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include translateY(-2000px);
+      }
+      100% {
+        opacity: 1;
+        @include translateY(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInRightBig
+
+@mixin animate-fadeInRightBig(
+  $properties  : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInRightBig;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include translateX(2000px);
+      }
+      100% {
+        opacity: 1;
+        @include translateX(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// fadeInLeftBig
+
+@mixin animate-fadeInLeftBig(
+  $properties   : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: fadeInLeftBig;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include translateX(-2000px);
+      }
+      100% {
+        opacity: 1;
+        @include translateX(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}

@@ -1,0 +1,66 @@
+
+// ---------------------------------------------------------------------------
+// flipOut [ x | y | all ]
+
+@mixin animate-flipOut(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub  : compact($sub);
+  $x    : yepnope($sub, all x);
+  $y    : yepnope($sub, all y);
+  @if $x  { @include animate-flipOutX ($properties, $class, $keyframes); }
+  @if $y  { @include animate-flipOutY ($properties, $class, $keyframes); }
+}
+
+// ---------------------------------------------------------------------------
+// flipOutX
+
+@mixin animate-flipOutX(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: flipOutX;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include transform(perspective(400px) rotateX(0deg));
+        @include opacity(1);
+      }
+      100% {
+        @include transform(perspective(400px) rotateX(90deg));
+        @include opacity(0);
+      }
+    }
+  }
+  @include flip-class($name, $properties, $class);
+}
+
+// ---------------------------------------------------------------------------
+// flipOutY
+
+@mixin animate-flipOutY(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: flipOutY;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include transform(perspective(400px) rotateY(0deg));
+        @include opacity(1);
+      }
+      100% {
+        @include transform(perspective(400px) rotateY(90deg));
+        @include opacity(0);
+      }
+    }
+  }
+  @include flip-class($name, $properties, $class);
+}

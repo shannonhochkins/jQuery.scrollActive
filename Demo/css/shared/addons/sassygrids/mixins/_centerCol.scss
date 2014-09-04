@@ -1,0 +1,24 @@
+@mixin centerCol($howManyGrids: 0, $fluid: false, $includeMargin : false, $includeColumn: true) {
+  @if $noErrors {
+    $colsRemaining: ($numberOfColumns - $howManyGrids)  / 2;
+    @if ($howManyGrids > $numberOfColumns){
+      @warn "Please enter a value greater than the number of columns set up in the basic setup section.";
+    } @else {
+      @if $includeColumn {
+          @include cols($howManyGrids, $fluid, true); 
+        }
+      @if $fluid {
+        $newMargin: (gw(($colsRemaining), $fluid, $includeMargin, false));
+        margin-left:$newMargin + unquote("%");
+        margin-right:$newMargin + unquote("%");
+      } @else {
+        $newMargin: (gw(($colsRemaining), $fluid, $includeMargin, false));
+        margin-left:$newMargin + px;
+        margin-right:$newMargin + px;  
+      }
+      
+    }
+    //Usage:
+    //@include centerCol(15, false);
+  }
+}

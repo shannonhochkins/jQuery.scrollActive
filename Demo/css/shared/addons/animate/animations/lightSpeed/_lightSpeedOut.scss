@@ -1,0 +1,26 @@
+
+
+// ---------------------------------------------------------------------------
+// lightSpeedOut
+
+@mixin animate-lightSpeedOut(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: lightSpeedOut;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include transform(translateX(0%) skewX(0deg));
+        @include opacity(1);
+      }
+      100% {
+        @include transform(translateX(100%) skewX(-30deg));
+        @include opacity(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}

@@ -1,0 +1,27 @@
+
+
+// ---------------------------------------------------------------------------
+// pulse
+
+@mixin animate-pulse(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: pulse;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include scale(1);
+      }
+      50% {
+        @include scale(1.1);
+      }
+      100% {
+        @include scale(1);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}

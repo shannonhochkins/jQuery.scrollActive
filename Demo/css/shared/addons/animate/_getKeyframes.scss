@@ -1,0 +1,130 @@
+// 
+// Get the keyframes for any specific animation
+// 
+
+@mixin getKeyframes($sub: all){
+  $sub                : compact($sub);
+  $fadeIn             : yepnope($sub, all fade fadeIn);
+  $fadeInUp           : yepnope($sub, all fade fadeInUp);
+  $fadeInDown         : yepnope($sub, all fade fadeInDown);
+  $fadeInLeft         : yepnope($sub, all fade fadeInLeft);
+  $fadeInRight        : yepnope($sub, all fade fadeInRight);
+  $fadeInUpBig        : yepnope($sub, all fade fadeInUpBig big);
+  $fadeInDownBig      : yepnope($sub, all fade fadeInDownBig down big);
+  $fadeInLeftBig      : yepnope($sub, all fade fadeInLeftBig left big);
+  $fadeInRightBig     : yepnope($sub, all fade fadeInRightBig right big);
+  $fadeOut            : yepnope($sub, all fade fadeOut);
+  $fadeOutUp          : yepnope($sub, all fade fadeOutUp up);
+  $fadeOutDown        : yepnope($sub, all fade fadeOutDown down);
+  $fadeOutLeft        : yepnope($sub, all fade fadeOutLeft left);
+  $fadeOutRight       : yepnope($sub, all fade fadeOutRight right);
+  $fadeOutUpBig       : yepnope($sub, all fade fadeOutUpBig up big);
+  $fadeOutDownBig     : yepnope($sub, all fade fadeOutDownBig down big);
+  $fadeOutLeftBig     : yepnope($sub, all fade fadeOutLeftBig left big);
+  $fadeOutRightBig    : yepnope($sub, all fade fadeOutRightBig right big);
+  $flash              : yepnope($sub, all attention flash);
+  $shake              : yepnope($sub, all attention shake);
+  $tada               : yepnope($sub, all attention tada);
+  $swing              : yepnope($sub, all attention swing);
+  $wobble             : yepnope($sub, all attention wobble);
+  $pulse              : yepnope($sub, all attention pulse);
+  $wiggle             : yepnope($sub, all attention wiggle);  
+  $bounceIn           : yepnope($sub, all bounce bounceIn);
+  $bounceInUp         : yepnope($sub, all bounce bounceInUp up);
+  $bounceInDown       : yepnope($sub, all bounce bounceInDown down);
+  $bounceInLeft       : yepnope($sub, all bounce bounceInLeft left);
+  $bounceInRight      : yepnope($sub, all bounce bounceInRight right);
+  $bounceOut          : yepnope($sub, all bounce bounceOut);
+  $bounceOutUp        : yepnope($sub, all bounce bounceOutUp up);
+  $bounceOutDown      : yepnope($sub, all bounce bounceOutDown down);
+  $bounceOutLeft      : yepnope($sub, all bounce bounceOutLeft left);
+  $bounceOutRight     : yepnope($sub, all bounce bounceOutRight right);  
+  $flipInX            : yepnope($sub, all flip flipIn flipInX flipX in x);
+  $flipInY            : yepnope($sub, all flip flipIn flipInY flipY in y);
+  $flipOutX           : yepnope($sub, all flip flipOut flipOutX flipX out x);
+  $flipOutY           : yepnope($sub, all flip flipOut flipOutY flipY out y);  
+  $lightSpeedIn       : yepnope($sub, all lightSpeed lightSpeedIn);
+  $lightSpeedOut      : yepnope($sub, all lightSpeed lightSpeedOut);  
+  $rollIn             : yepnope($sub, all roll rollIn);
+  $rollOut            : yepnope($sub, all roll rollOut);  
+  $rotateIn-only      : yepnope($sub, all rotate rotateIn in-only);
+  $rotateInDownLeft   : yepnope($sub, all rotate rotateIn inDownLeft left down);
+  $rotateInDownRight  : yepnope($sub, all rotate rotateIn inDownRight right down);
+  $rotateInUpLeft     : yepnope($sub, all rotate rotateIn inUpLeft left up);
+  $rotateInUpRight    : yepnope($sub, all rotate rotateIn inUpRight right up);
+  $rotateOut-only     : yepnope($sub, all rotate rotateOut-only);
+  $rotateOutDownLeft  : yepnope($sub, all rotate rotateOutDownLeft left down);
+  $rotateOutDownRight : yepnope($sub, all rotate rotateOutDownRight right down);
+  $rotateOutUpLeft    : yepnope($sub, all rotate rotateOutUpLeft left up);
+  $rotateOutUpRight   : yepnope($sub, all rotate rotateOutUpRight right up);  
+  $slideInDown        : yepnope($sub, all slide slideInDown down);
+  $slideInLeft        : yepnope($sub, all slide slideInLeft left);
+  $slideInRight       : yepnope($sub, all slide slideInRight right);
+  $slideOutUp         : yepnope($sub, all slide slideOutUp up);
+  $slideOutLeft       : yepnope($sub, all slide slideOutLeft left);
+  $slideOutRight      : yepnope($sub, all slide slideOutRight right);
+  $hinge              : yepnope($sub, all special hinge);
+
+  @if $fadeIn             { @include animate-fadeIn               (null, false, only); }
+  @if $fadeInUp           { @include animate-fadeInUp             (null, false, only); }
+  @if $fadeInDown         { @include animate-fadeInDown           (null, false, only); }
+  @if $fadeInLeft         { @include animate-fadeInLeft           (null, false, only); }
+  @if $fadeInRight        { @include animate-fadeInRight          (null, false, only); }
+  @if $fadeInUpBig        { @include animate-fadeInUpBig          (null, false, only); }
+  @if $fadeInDownBig      { @include animate-fadeInDownBig        (null, false, only); }
+  @if $fadeInLeftBig      { @include animate-fadeInLeftBig        (null, false, only); }
+  @if $fadeInRightBig     { @include animate-fadeInRightBig       (null, false, only); }
+  @if $fadeOut            { @include animate-fadeOut              (null, false, only); }
+  @if $fadeOutUp          { @include animate-fadeOutUp            (null, false, only); }
+  @if $fadeOutDown        { @include animate-fadeOutDown          (null, false, only); }
+  @if $fadeOutLeft        { @include animate-fadeOutLeft          (null, false, only); }
+  @if $fadeOutRight       { @include animate-fadeOutRight         (null, false, only); }
+  @if $fadeOutUpBig       { @include animate-fadeOutUpBig         (null, false, only); }
+  @if $fadeOutDownBig     { @include animate-fadeOutDownBig       (null, false, only); }
+  @if $fadeOutLeftBig     { @include animate-fadeOutLeftBig       (null, false, only); }
+  @if $fadeOutRightBig    { @include animate-fadeOutRightBig      (null, false, only); }
+  @if $flash              { @include animate-flash                (null, false, only); }
+  @if $shake              { @include animate-shake                (null, false, only); }
+  @if $tada               { @include animate-tada                 (null, false, only); }
+  @if $swing              { @include animate-swing                (null, false, only); }
+  @if $wobble             { @include animate-wobble               (null, false, only); }
+  @if $pulse              { @include animate-pulse                (null, false, only); }
+  @if $wiggle             { @include animate-wiggle               (null, false, only); }  
+  @if $bounceIn           { @include animate-bounceIn             (null, false, only); }
+  @if $bounceInUp         { @include animate-bounceInUp           (null, false, only); }
+  @if $bounceInDown       { @include animate-bounceInDown         (null, false, only); }
+  @if $bounceInLeft       { @include animate-bounceInLeft         (null, false, only); }
+  @if $bounceInRight      { @include animate-bounceInRight        (null, false, only); }
+  @if $bounceOut          { @include animate-bounceOut            (null, false, only); }
+  @if $bounceOutUp        { @include animate-bounceOutUp          (null, false, only); }
+  @if $bounceOutDown      { @include animate-bounceOutDown        (null, false, only); }
+  @if $bounceOutLeft      { @include animate-bounceOutLeft        (null, false, only); }
+  @if $bounceOutRight     { @include animate-bounceOutRight       (null, false, only); }
+  @if $flipInX            { @include animate-flipInX              (null, false, only); }
+  @if $flipInY            { @include animate-flipInY              (null, false, only); }
+  @if $flipOutX           { @include animate-flipOutX             (null, false, only); }
+  @if $flipOutY           { @include animate-flipOutY             (null, false, only); }  
+  @if $lightSpeedIn       { @include animate-lightSpeedIn         (null, false, only); }
+  @if $lightSpeedOut      { @include animate-lightSpeedOut        (null, false, only); }  
+  @if $rollIn             { @include animate-rollIn               (null, false, only); }
+  @if $rollOut            { @include animate-rollOut              (null, false, only); }
+  @if $rotateIn-only      { @include animate-rotateIn             (only, null, false, only); }
+  @if $rotateInDownLeft   { @include animate-rotateInDownLeft     (null, false, only); }
+  @if $rotateInDownRight  { @include animate-rotateInDownRight    (null, false, only); }
+  @if $rotateInUpLeft     { @include animate-rotateInUpLeft       (null, false, only); }
+  @if $rotateInUpRight    { @include animate-rotateInUpRight      (null, false, only); }
+  @if $rotateOut-only     { @include animate-rotateOut            (only, null, false, only ); }
+  @if $rotateOutDownLeft  { @include animate-rotateOutDownLeft    (null, false, only); }
+  @if $rotateOutDownRight { @include animate-rotateOutDownRight   (null, false, only); }
+  @if $rotateOutUpLeft    { @include animate-rotateOutUpLeft      (null, false, only); }
+  @if $rotateOutUpRight   { @include animate-rotateOutUpRight     (null, false, only); }
+  @if $slideInDown        { @include animate-slideInDown          (null, false, only); }
+  @if $slideInLeft        { @include animate-slideInLeft          (null, false, only); }
+  @if $slideInRight       { @include animate-slideInRight         (null, false, only); }
+  @if $slideOutUp         { @include animate-slideOutUp           (null, false, only); }
+  @if $slideOutLeft       { @include animate-slideOutLeft         (null, false, only); }
+  @if $slideOutRight      { @include animate-slideOutRight        (null, false, only); }  
+  @if $hinge              { @include animate-hinge                (null, false, only); }
+            
+
+}

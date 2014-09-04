@@ -1,0 +1,22 @@
+@mixin animate-scaleOut(  
+  $properties   : null,
+  $class        : $default-animation-class-mode,
+  $keyframes    : $default-keyframes-output
+) {
+  $name: scaleOut;
+  
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 1;
+        @include scale(1);
+      }
+      100% {
+        opacity: 0;
+        @include scale(0);
+      }
+    }
+  }  
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}

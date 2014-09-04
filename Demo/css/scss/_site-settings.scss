@@ -1,0 +1,96 @@
+$brandColour1:#f57e20;
+$brandColour2:#231f1f;
+$brandColour3:#1e1e1e;
+$brandColour4:#f0f0f0;
+
+/* Body - fonts
+----------------------------------------------- */
+
+$body-font-family:"UniSansLight",Helvetica,Arial,sans-serif;
+$body-font-weight: 300;
+$body-font-style: normal;
+$body-text-rendering: optimizeLegibility;
+
+/* Global
+----------------------------------------------- */
+
+$vertical-spacing: 25px;		// used for spacing throughout the site
+$radius:3px;					// You can use this variable throughout your site to globalize border-radius size
+$text-direction:ltr;			// Change the direction of text flow
+$min-page-width:0;			// Set a minimum page width so that the browser doesn't squash everything
+
+/* Font Specific Settings
+----------------------------------------------- */ 
+
+$base-font-size:  14px;			// Main font size to use throughout the site
+$line-height: 21px;				// Global line-height
+$font-smoothing: antialiased;   // Font smoothing
+
+$header-font-family: "UniSansRegularItalic",Helvetica,Arial,sans-serif,sans-serif;
+$header-font-weight: 400;
+$header-font-style: normal;
+$header-font-color: $brandColour3; 
+$header-line-height: normal;
+$header-top-margin: 0; 
+$header-bottom-margin: 20px; 
+$header-text-rendering: optimizeLegibility; 
+
+								
+$h1-font-size:30px;				// Header Sizes (converted to ems)
+$h2-font-size:26px;				// Header Sizes (converted to ems)
+$h3-font-size:24px;				// Header Sizes (converted to ems)
+$h4-font-size:18px;				// Header Sizes (converted to ems)
+$h5-font-size:16px;				// Header Sizes (converted to ems)
+$h6-font-size:14px;				// Header Sizes (converted to ems)
+
+/* Form Settings 
+----------------------------------------------- */
+
+$form-padding:5px;
+$form-border-color:#ddd;
+$form-border-size:1px;
+$form-border-style:solid; 
+
+
+/* Tables
+----------------------------------------------- */
+
+
+$table-header-background-color:black; 
+$table-header-text-color:#1abc9c; 
+$table-body-text-color:#fff;
+$table-row-background-color:#222; 
+$table-row-alt-background-color:darken(#222,3%);
+$table-border-color:#111;  
+$table-border-size:1px;
+
+
+/* Button settings
+----------------------------------------------- */
+
+$button-font-size:13px;
+$button-text-color:#fff;  
+
+// Helpful variables
+$i:!important;					// Shortcut for the !important tag
+
+/* Site colour variables
+----------------------------------------------- */
+
+
+
+$linkColor:                           $brandColour1 !default;
+$linkHoverColor:                      $brandColour1    !default;
+$body-background: 					  white !default;
+$body-color:                          $brandColour3 !default; 
+
+$warningText:                         #c09853 !default;
+$alertText:                           #c09853 !default;
+$alertBackground:                     #c09853 !default;
+$warningBackground:                   #fcf8e3 !default;
+$errorText:                           #b94a48 !default;
+$errorBackground:                     #f2dede !default;
+$successText:                         #468847 !default;
+$successBackground:                   #dff0d8 !default;
+$infoText:                            #3a87ad !default;
+$infoBackground:                      #d9edf7 !default;

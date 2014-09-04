@@ -1,0 +1,101 @@
+// ---------------------------------------------------------------------------
+// special class handling
+
+@mixin flip-class($name, $properties, $class: $default-animation-class-mode) {
+  @include animation-class($name, $properties, $class) {
+    @include backface-visibility(visible);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// imports
+
+@import "flip/flipIn";
+@import "flip/flipOut";
+
+// ---------------------------------------------------------------------------
+// flip [ only | in | out | x | y | all |
+//        flipIn | flipInX | flipInY |
+//        flipOut | flipOutX | flipOutY |
+//        flipX | flipY ]
+
+@mixin animate-flip(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub        : compact($sub);
+  $only       : yepnope($sub, all only);
+  $flipInX    : yepnope($sub, all flipIn flipInX flipX in x);
+  $flipInY    : yepnope($sub, all flipIn flipInY flipY in y);
+  $flipOutX   : yepnope($sub, all flipOut flipOutX flipX out x);
+  $flipOutY   : yepnope($sub, all flipOut flipOutY flipY out y);
+
+  @if $flipInX    { @include animate-flipInX    ($properties, $class, $keyframes); }
+  @if $flipInY    { @include animate-flipInY    ($properties, $class, $keyframes); }
+  @if $flipOutX   { @include animate-flipOutX   ($properties, $class, $keyframes); }
+  @if $flipOutY   { @include animate-flipOutY   ($properties, $class, $keyframes); }
+
+  $name: flip;
+  @if $only {
+    $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+      @include keyframes($name) {
+        0% {
+          @include transform(perspective(400px) rotateY(0));
+          @include animation-timing-function(ease-out);
+        }
+        40% {
+          @include transform(perspective(400px) translateZ(150px) rotateY(170deg));
+          @include animation-timing-function(ease-out);
+        }
+        50% {
+          @include transform(perspective(400px) translateZ(150px) rotateY(190deg) scale(1));
+          @include animation-timing-function(ease-in);
+        }
+        80% {
+          @include transform(perspective(400px) rotateY(360deg) scale(0.95));
+          @include animation-timing-function(ease-in);
+        }
+        100% {
+          @include transform(perspective(400px) scale(1));
+          @include animation-timing-function(ease-in);
+        }
+      }
+    }
+    @include flip-class($name, $properties, $class);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// flipX [ in | out | all ]
+
+@mixin animate-flipX(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub  : compact($sub);
+  $in   : yepnope($sub, all in);
+  $out  : yepnope($sub, all out);
+  @if $in   { @include animate-flipInX  ($properties, $class, $keyframes); }
+  @if $out  { @include animate-flipOutX ($properties, $class, $keyframes); }
+}
+
+// ---------------------------------------------------------------------------
+// flipY [ in | out | all ]
+
+@mixin animate-flipY(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub  : compact($sub);
+  $in   : yepnope($sub, all in);
+  $out  : yepnope($sub, all out);
+  @if $in   { @include animate-flipInY  ($properties, $class, $keyframes); }
+  @if $out  { @include animate-flipOutY ($properties, $class, $keyframes); }
+}

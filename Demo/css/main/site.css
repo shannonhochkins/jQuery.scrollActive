@@ -1,0 +1,137 @@
+/* Body - fonts
+----------------------------------------------- */
+/* Global
+----------------------------------------------- */
+/* Font Specific Settings
+----------------------------------------------- */
+/* Form Settings 
+----------------------------------------------- */
+/* Tables
+----------------------------------------------- */
+/* Button settings
+----------------------------------------------- */
+/* Site colour variables
+----------------------------------------------- */
+/* Settings for SassyGrids 
+----------------------------------------------------------------------------------------------------*/
+/* Import Mixins used by SassyGrids
+----------------------------------------------------------- -----------------------------------------*/
+/* Import Functions used by SassyGrids
+----------------------------------------------------------- -----------------------------------------*/
+/* Error Handling for SASS precomiler
+----------------------------------------------------------- -----------------------------------------*/
+/* line 5, site.scss */
+body, html, #mainContent {
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  /* line 16, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 19, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  /* line 16, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 19, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  /* line 16, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 19, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  /* line 16, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 19, ../shared/addons/animate/animations/fade/_fadeIn.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 11, site.scss */
+html {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -ms-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -ms-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+/* line 13, site.scss */
+body {
+  min-height: 385px;
+  background: url("../../_images/tocket_background.jpg") no-repeat center center;
+}
+
+/* line 16, site.scss */
+[class^="grid"] {
+  min-height: 1px;
+}
+
+/* line 17, site.scss */
+.navbar-wrapper {
+  margin-top: 10px;
+}
+
+/* line 18, site.scss */
+.menu ul li a.active {
+  color: black;
+}
+
+/* line 19, site.scss */
+.push {
+  height: 500px;
+  background: pink;
+}
+
+/* line 21, site.scss */
+#wrapper .post {
+  background: rgba(0, 0, 0, 0.8);
+  margin: 30px 0;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+/* line 22, site.scss */
+#wrapper .post.active {
+  background: rgba(0, 128, 0, 0.8);
+}

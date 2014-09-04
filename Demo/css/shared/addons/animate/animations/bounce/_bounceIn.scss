@@ -1,0 +1,158 @@
+// ---------------------------------------------------------------------------
+// imports
+
+
+// ---------------------------------------------------------------------------
+// bounceIn
+
+@mixin animate-bounceIn(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: bounceIn;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include scale(0.3);
+      }
+      50% {
+        opacity: 1;
+        @include scale(1.05);
+      }
+      70% {
+        @include scale(0.9);
+      }
+      100% {
+        @include scale(1);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// bounceInDown
+
+@mixin animate-bounceInDown(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: bounceInDown;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include translateY(-2000px);
+      }
+      60% {
+        opacity: 1;
+        @include translateY(30px);
+      }
+      80% {
+        @include translateY(-10px);
+      }
+      100% {
+        @include translateY(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// bounceInUp
+
+@mixin animate-bounceInUp(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: bounceInUp;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include translateY(2000px);
+      }
+      60% {
+        opacity: 1;
+        @include translateY(-30px);
+      }
+      80% {
+        @include translateY(10px);
+      }
+      100% {
+        @include translateY(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// bounceInRight
+
+@mixin animate-bounceInRight(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: bounceInRight;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include translateX(2000px);
+      }
+      60% {
+        opacity: 1;
+        @include translateX(-30px);
+      }
+      80% {
+        @include translateX(10px);
+      }
+      100% {
+        @include translateX(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// bounceInLeft
+
+@mixin animate-bounceInLeft(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: bounceInLeft;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        opacity: 0;
+        @include translateX(-2000px);
+      }
+      60% {
+        opacity: 1;
+        @include translateX(30px);
+      }
+      80% {
+        @include translateX(-10px);
+      }
+      100% {
+        @include translateX(0);
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}

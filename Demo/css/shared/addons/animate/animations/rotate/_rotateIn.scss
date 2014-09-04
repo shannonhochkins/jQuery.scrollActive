@@ -1,0 +1,218 @@
+
+// ---------------------------------------------------------------------------
+// rotateIn [ only | up | down | left | right |
+//            downLeft | downRight | upLeft | upRight | all ]
+
+@mixin animate-rotateIn(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub        : compact($sub);
+  $only       : yepnope($sub, all only);
+  $downLeft   : yepnope($sub, all down left downLeft);
+  $downRight  : yepnope($sub, all down right downRight);
+  $upLeft     : yepnope($sub, all up left upLeft);
+  $upRight    : yepnope($sub, all up right upRight);
+
+  @if $downLeft   { @include animate-rotateInDownLeft   ($properties, $class, $keyframes); }
+  @if $downRight  { @include animate-rotateInDownRight  ($properties, $class, $keyframes); }
+  @if $upLeft     { @include animate-rotateInUpLeft     ($properties, $class, $keyframes); }
+  @if $upRight    { @include animate-rotateInUpRight    ($properties, $class, $keyframes); }
+
+  $name: rotateIn;
+  @if $only {
+    $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+      @include keyframes($name) {
+        0% {
+          @include transform-origin(center, center);
+          @include rotate(-200deg);
+          opacity: 0;
+        }
+        100% {
+          @include transform-origin(center, center);
+          @include rotate(0);
+          opacity: 1;
+        }
+      }
+    }
+    @if $properties != null {
+      @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// rotateInUp [ left | right | all ]
+
+@mixin animate-rotateInUp(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub    : compact($sub);
+  $left   : yepnope($sub, all left);
+  $right  : yepnope($sub, all right);
+  @if $left   { @include animate-rotateInUpLeft   ($properties, $class, $keyframes); }
+  @if $right  { @include animate-rotateInUpRight  ($properties, $class, $keyframes); }
+}
+
+// ---------------------------------------------------------------------------
+// rotateInDown [ left | right | all ]
+
+@mixin animate-rotateInDown(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub    : compact($sub);
+  $left   : yepnope($sub, all left);
+  $right  : yepnope($sub, all right);
+  @if $left   { @include animate-rotateInDownLeft   ($properties, $class, $keyframes); }
+  @if $right  { @include animate-rotateInDownRight  ($properties, $class, $keyframes); }
+}
+
+
+// ---------------------------------------------------------------------------
+// rotateInLeft [ up | down | all ]
+
+@mixin animate-rotateInLeft(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub    : compact($sub);
+  $up     : yepnope($sub, all up);
+  $down   : yepnope($sub, all down);
+  @if $up   { @include animate-rotateInUpLeft   ($properties, $class, $keyframes); }
+  @if $down { @include animate-rotateInDownLeft ($properties, $class, $keyframes); }
+}
+
+// ---------------------------------------------------------------------------
+// rotateInRight [ up | down | all ]
+
+@mixin animate-rotateInRight(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub    : compact($sub);
+  $up     : yepnope($sub, all up);
+  $down   : yepnope($sub, all down);
+  @if $up   { @include animate-rotateInUpRight    ($properties, $class, $keyframes); }
+  @if $down { @include animate-rotateInDownRight  ($properties, $class, $keyframes); }
+}
+
+// ---------------------------------------------------------------------------
+// rotateInDownLeft
+
+@mixin animate-rotateInDownLeft(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: rotateInDownLeft;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include transform-origin(left, bottom);
+        @include rotate(-90deg);
+        opacity: 0;
+      }
+      100% {
+        @include transform-origin(left, bottom);
+        @include rotate(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// rotateInUpLeft
+
+@mixin animate-rotateInUpLeft(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: rotateInUpLeft;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include transform-origin(left, bottom);
+        @include rotate(90deg);
+        opacity: 0;
+      }
+      100% {
+        @include transform-origin(left, bottom);
+        @include rotate(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// rotateInUpRight
+
+@mixin animate-rotateInUpRight(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: rotateInUpRight;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include transform-origin(right, bottom);
+        @include rotate(-90deg);
+        opacity: 0;
+      }
+      100% {
+        @include transform-origin(right, bottom);
+        @include rotate(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}
+
+// ---------------------------------------------------------------------------
+// rotateInDownRight
+
+@mixin animate-rotateInDownRight(
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $name: rotateInDownRight;
+  $keyframes: if($class == nested, false, $keyframes);
+@if $keyframes {
+    @include keyframes($name) {
+      0% {
+        @include transform-origin(right, bottom);
+        @include rotate(90deg);
+        opacity: 0;
+      }
+      100% {
+        @include transform-origin(right, bottom);
+        @include rotate(0);
+        opacity: 1;
+      }
+    }
+  }
+  @if $keyframes != only {@include animation-class($name, $properties, $class) {}}
+}

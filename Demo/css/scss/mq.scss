@@ -1,0 +1,29 @@
+@import '../shared/framework';
+   
+
+body.fluid {
+  .gridContainer {
+    &#notify {margin-left:0; left:0;}
+    .formWrapper {
+    
+      @include to(2) {
+        form.grid10 {width:100%;
+          input[type="text"]    {width:55%;margin-left:2.5%;}
+          input[type="submit"]  {width:38.75%;float:right;margin-right:2.5%;}
+        }
+      }
+      @include at(3) {
+        form.grid10 {width:70%; margin:0 auto;float: none;@include inline-block();
+          input[type="text"]    {width:67.5%;}
+          input[type="submit"]  {width:30%; float:right;}
+        }
+      }
+      @include at(4) {
+        form.grid10 {width:50%; margin:0 auto;float: none;@include inline-block();
+          input[type="text"]    {width:67.5%;}
+          input[type="submit"]  {width:30%; float:right;}
+        }
+      }
+    }
+  }
+}  

@@ -1,0 +1,24 @@
+@import '../shared/framework';
+
+
+
+body, html, #mainContent {max-height:100%; height:100%; width:100%;padding:0; margin:0;}
+
+
+
+@include getKeyframes(fadeIn);
+
+html {@include animate-fadeIn($properties: 0.5s ease-in-out, $class: nested);}
+
+body {min-height:385px; 
+	background: url('../../_images/tocket_background.jpg') no-repeat center center;
+}
+[class^="grid"] {min-height:1px;}
+.navbar-wrapper {margin-top:10px;}
+.menu ul li a {&.active {color:black;}}
+.push {height:500px; background:pink;}
+#wrapper {
+	.post {background:rgba(black, 0.8); margin:30px 0; color:white; padding:30px 0; text-align:center;
+		&.active {background:rgba(green, 0.8);}
+	}
+} 

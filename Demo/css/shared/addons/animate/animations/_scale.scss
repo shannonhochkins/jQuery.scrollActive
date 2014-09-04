@@ -1,0 +1,21 @@
+// ---------------------------------------------------------------------------
+// imports
+
+@import "scale/scaleIn";
+@import "scale/scaleOut";
+
+// ---------------------------------------------------------------------------
+// attention [ all | fadeIn | fadeOut ]
+
+@mixin animate-scale(
+  $sub        : all,
+  $properties : null,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub         : compact($sub);
+  $scaleIn     : yepnope($sub, all scaleIn);
+  $scaleOut    : yepnope($sub, all scaleOut);
+  @if $scaleIn     { @include animate-scaleIn     ($properties, $class, $keyframes); }
+  @if $scaleOut    { @include animate-scaleOut    ($properties, $class, $keyframes); }
+}

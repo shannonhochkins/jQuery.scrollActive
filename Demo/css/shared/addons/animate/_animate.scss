@@ -1,0 +1,54 @@
+// ---------------------------------------------------------------------------
+// Animations from Animate.css
+// Author : Dan Eden
+// URL    : http://daneden.me/animate/
+// Developer: https://github.com/shannonhochkins/SassyAnimation
+// ---------------------------------------------------------------------------
+// imports
+
+@import "helpers";
+@import "getKeyframes";
+@import "animations/custom_mixins/prefix";
+@import "animations/custom_mixins/animation";
+@import "animations/custom_mixins/keyframes";
+@import "animations/attention";
+@import "animations/bounce";
+@import "animations/fade";
+@import "animations/flip";
+@import "animations/lightSpeed";
+@import "animations/roll";
+@import "animations/rotate";
+@import "animations/slide"; 
+@import "animations/special";
+@import "animations/scale";
+@import "compass/css3";
+
+// ---------------------------------------------------------------------------
+// animate [ attention | bounce | fade | flip |
+//           lightSpeed | roll | rotate | special | all ]
+
+@mixin animate(
+  $sub        : all,
+  $properties : $default-animation-properties,
+  $class      : $default-animation-class-mode,
+  $keyframes  : $default-keyframes-output
+) {
+  $sub        : compact($sub);
+  $attention  : yepnope($sub, all attention);
+  $bounce     : yepnope($sub, all bounce);
+  $fade       : yepnope($sub, all fade);
+  $flip       : yepnope($sub, all flip);
+  $lightSpeed : yepnope($sub, all lightSpeed);
+  $roll       : yepnope($sub, all roll);
+  $rotate     : yepnope($sub, all rotate);
+  $special    : yepnope($sub, all special);
+  @if $attention  { @include animate-attention  (all, $properties, $class, $keyframes); }
+  @if $bounce     { @include animate-bounce     (all, $properties, $class, $keyframes); }
+  @if $fade       { @include animate-fade       (all, $properties, $class, $keyframes); }
+  @if $flip       { @include animate-flip       (all, $properties, $class, $keyframes); }
+  @if $lightSpeed { @include animate-lightSpeed (all, $properties, $class, $keyframes); }
+  @if $roll       { @include animate-roll       (all, $properties, $class, $keyframes); }
+  @if $rotate     { @include animate-rotate     (all, $properties, $class, $keyframes); }
+  @if $special    { @include animate-special    (all, $properties, $class, $keyframes); }
+}
+
