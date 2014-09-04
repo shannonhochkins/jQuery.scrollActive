@@ -6,7 +6,7 @@ $brandColour4:#f0f0f0;
 /* Body - fonts
 ----------------------------------------------- */
 
-$body-font-family:"UniSansLight",Helvetica,Arial,sans-serif;
+$body-font-family:Helvetica,Arial,sans-serif;
 $body-font-weight: 300;
 $body-font-style: normal;
 $body-text-rendering: optimizeLegibility;
@@ -26,7 +26,7 @@ $base-font-size:  14px;			// Main font size to use throughout the site
 $line-height: 21px;				// Global line-height
 $font-smoothing: antialiased;   // Font smoothing
 
-$header-font-family: "UniSansRegularItalic",Helvetica,Arial,sans-serif,sans-serif;
+$header-font-family: Helvetica,Arial,sans-serif,sans-serif;
 $header-font-weight: 400;
 $header-font-style: normal;
 $header-font-color: $brandColour3; 

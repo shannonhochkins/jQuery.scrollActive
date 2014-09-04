@@ -99,31 +99,30 @@ html {
 /* line 13, site.scss */
 body {
   min-height: 385px;
-  background: url("../../_images/tocket_background.jpg") no-repeat center center;
 }
 
-/* line 16, site.scss */
+/* line 15, site.scss */
 [class^="grid"] {
   min-height: 1px;
 }
 
-/* line 17, site.scss */
+/* line 16, site.scss */
 .navbar-wrapper {
   margin-top: 10px;
 }
 
-/* line 18, site.scss */
+/* line 17, site.scss */
 .menu ul li a.active {
   color: black;
 }
 
-/* line 19, site.scss */
+/* line 18, site.scss */
 .push {
   height: 500px;
   background: pink;
 }
 
-/* line 21, site.scss */
+/* line 20, site.scss */
 #wrapper .post {
   background: rgba(0, 0, 0, 0.8);
   margin: 30px 0;
@@ -131,7 +130,7 @@ body {
   padding: 30px 0;
   text-align: center;
 }
-/* line 22, site.scss */
+/* line 21, site.scss */
 #wrapper .post.active {
   background: rgba(0, 128, 0, 0.8);
 }

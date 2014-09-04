@@ -1,0 +1,82 @@
+<h1 id="scroll-active">Scroll Active</h1>
+<p>This plugin will automate animation, activate sections in the menu &amp; the content &amp; correctly assign hashes to the browsers window. created by <a href="http://www.shannonhochkins.com/">shannon hochkins</a>.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-javascript">$(&#39;.element&#39;).scrollActive({
+    scanItems: &#39;.post&#39;, // CLASS of elements you want to scan to see if it&#39;s in the set area
+    scanLimit: 200, // The distance from the top that the plugin scans from
+    startScanningAfter: 50, // used so that the first item in the list can be activated on page load
+    itemTopOffset: 0, // You can add or even subtract, where the plugin thinks the top of each item is.
+    activeClass: &#39;active&#39;,
+    pageAnimationSpeed: 300,
+    updateHash: true, // If the browser should set the hash when scrolling or clicking he sidebar
+    hashPrefix: &#39;menu_&#39;, // Used so that the browser doesn&#39;t automatically jump to the id on the page and cause our animation to lag
+    debug: true, // enables a visual representation of when items become active
+    onScroll: function(settings) {},
+});</code></pre>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scanItems</td>
+<td style="text-align:center">&#39;.post&#39;</td>
+<td style="text-align:right">CLASS of elements you want to scan to see if it&#39;s in the scan area</td>
+</tr>
+<tr>
+<td>scanLimit</td>
+<td style="text-align:center">200</td>
+<td style="text-align:right">The distance from the top that the plugin scans from, everything after this position from the top of the WINDOW not the document, will be activated.</td>
+</tr>
+<tr>
+<td>startScanningAfter</td>
+<td style="text-align:center">50</td>
+<td style="text-align:right">Disable the scanning until the user has scrolled a certain amount of pixels.</td>
+</tr>
+<tr>
+<td>itemTopOffset</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">You have an option to push the scan field down by an offset as well</td>
+</tr>
+<tr>
+<td>activeClass</td>
+<td style="text-align:center">&#39;active&#39;</td>
+<td style="text-align:right">The class that will be appended to the menu items &amp; the content on the page</td>
+</tr>
+<tr>
+<td>pageAnimationSpeed</td>
+<td style="text-align:center">300</td>
+<td style="text-align:right">How fast the plugin will scroll to sections when clicked from the menu</td>
+</tr>
+<tr>
+<td>updateHash</td>
+<td style="text-align:center">true</td>
+<td style="text-align:right">If the plugin should update the browsers hash</td>
+</tr>
+<tr>
+<td>hashPrefix</td>
+<td style="text-align:center">&#39;menu_&#39;</td>
+<td style="text-align:right">We prefix the hash, so that the browser doesn&#39;t automatically jump to a position on the page</td>
+</tr>
+<tr>
+<td>debug</td>
+<td style="text-align:center">false</td>
+<td style="text-align:right">will draw some helpful html on the page to indicate where the active sections will start being activated</td>
+</tr>
+<tr>
+<td>onScroll</td>
+<td style="text-align:center">function() {settings}</td>
+<td style="text-align:right">Callback when the users has scrolled</td>
+</tr>
+</tbody>
+</table>
+<p><code>Note: if you set the hashPrefix to an empty string you will see jumping if the animation speed is greater than 0.</code></p>
+<h2 id="debug-mode-">Debug mode.</h2>
+<p>-- The red section toward the top that is drawn indicates that any items who&#39;s top position falls inside the redZone, it&#39;s nolonger classed as active.
+-- The green section indicates that scan area, so the first item it finds who&#39;s top position is closest to the top of the green zone but NOT in the redZone, is classed as the active item.
+-- If the greenZone is PINK it means that the startScanningAfter variable is currently set to a larger pixel value than the user has scrolled, once the scroll count is larger than the startScanningAfter variable, it will start scanning.</p>
