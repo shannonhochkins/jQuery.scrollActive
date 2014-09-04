@@ -18,9 +18,7 @@ $(document).ready(function() {
     });
 
     // Pins the menu
-    menu.stickUp({
-        topMargin: "sdfsdf3434"
-    });
+    menu.stickUp();
     // Activates classes on scroll.
     menu.scrollActive({
         scanItems: '.post'
