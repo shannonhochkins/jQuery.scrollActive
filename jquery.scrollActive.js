@@ -23,8 +23,9 @@
 		pageAnimationSpeed: 300,
 		updateHash: true, // If the browser should set the hash when scrolling or clicking he sidebar
 		hashPrefix: 'menu_', // Used so that the browser doesn't automatically jump to the id on the page and cause our animation to lag
-		debug: true, // enables a visual representation of when items become active
-		onScroll: function(settings) {},
+		debug: false, // enables a visual representation of when items become active
+		onScroll: function(settings) {}, // Once user has stopped scrolling and a new element is bound, this callback is activated
+		onClickFinish: function() {} // When the user clicks an anchor in the menu this plugin was run on
 
 	};
 
@@ -159,7 +160,7 @@
 		bindEvents: function() {
 			var self = this;
 			// Bind events to the menu items.
-			self.settings.body.on('click', '.menu li a', function(e) {
+			self.settings.menuItems.on('click', function(e) {
 				e.preventDefault();
 				if (self.settings.allowedScan == true) {
 					self.settings.allowedScan = false;
@@ -169,7 +170,9 @@
 					self.scrollTo(href, function() {
 						self.bindActive(item);
 						self.bindActive($(self.settings.scanItems + href));
-
+						if (typeof(self.settings.onClickFinish) == 'function') {
+							self.settings.onClickFinish.apply(self, [item]);
+						}
 						var t = setTimeout(function() {
 							// Crude hack to stop the scan while the page is animating from a clicked element,
 							// Setting the timeout + 1 of the animation speed forces the delay/callback to not
